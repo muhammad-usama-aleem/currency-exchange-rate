@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exchange Rate Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img
+      src="img/money.png"
+      alt=""
+      class="money-img"
+      width="250px"
+      height="250px"
+    />
+    <h1>Exchange Rate Calculator</h1>
+    <p>Choose the currency and the amounts to get the exchange rate</p>
+
+    <div class="container">
+      <div class="currency">
+        <select id="currency-one">
+          <option value="AED">AED<small class="small">(UAE)</small></option>
+          <option value="ARS"
+            >ARS<small class="small">(Argentinian)</small></option
+          >
+          <option value="AUD"
+            >AUD(<small class="small">Australian)</small></option
+          >
+          <option value="BGN"
+            >BGN<small class="small">(Bulgarian)</small></option
+          >
+          <option value="BRL"
+            >BRL<small class="small">(Brazilian)</small></option
+          >
+          <option value="BSD"
+            >BSD<small class="small">(Bahamian)</small></option
+          >
+          <option value="CAD"
+            >CAD<small class="small">(Canadian)</small></option
+          >
+          <option value="CHF"
+            >CHF<small class="small">(Switzerland)</small></option
+          >
+          <option value="CLP">CLP<small class="small">(CHILE)</small></option>
+          <option value="CNY">CNY<small class="small">(CHINA)</small></option>
+          <option value="COP"
+            >COP<small class="small">(COLOMBIA)</small></option
+          >
+          <option value="CZK">CZK<small class="small">(CZECH)</small></option>
+          <option value="DKK">DKK<small class="small">(DENMARK)</small></option>
+          <option value="DOP"
+            >DOP<small class="small">(DOMINICAN)</small></option
+          >
+          <option value="EGP">EGP<small class="small">(EGYPT)</small></option>
+          <option value="EUR"
+            >EUR<small class="small">(EUROPEAN)</small></option
+          >
+          <option value="FJD">FJD<small class="small">(FIJI)</small></option>
+          <option value="GBP"
+            >GBP<small class="small">(GUERNSEY)</small></option
+          >
+          <option value="GTQ"
+            >GTQ<small class="small">(GUATEMALA)</small></option
+          >
+          <option value="HKD"
+            >HKD<small class="small">(HONG KONG)</small></option
+          >
+          <option value="HRK"
+            >HRK<small class="small">(Croatian)</small></option
+          >
+          <option value="HUF">HUF<small class="small">(HUNGARY)</small></option>
+          <option value="IDR"
+            >IDR<small class="small">(INDONESIA)</small></option
+          >
+          <option value="ILS">ILS<small class="small">(ISRAEL)</small></option>
+          <option value="INR">INR<small class="small">(INDIA)</small></option>
+          <option value="ISK">ISK<small class="small">(ICELAND)</small></option>
+          <option value="JPY">JPY<small class="small">(JAPAN)</small></option>
+          <option value="KRW">KRW<small class="small">(KOREA)</small></option>
+          <option value="KZT"
+            >KZT<small class="small">(KAZAKHSTAN)</small></option
+          >
+          <option value="MXN">MXN<small class="small">(MEXICO)</small></option>
+          <option value="MYR"
+            >MYR<small class="small">(MALAYSIA)</small></option
+          >
+          <option value="NOK">NOK<small class="small">(NORWAY)</small></option>
+          <option value="NZD">NZD<small class="small">(NIUE)</small></option>
+          <option value="PAB">PAB<small class="small">(PANAMA)</small></option>
+          <option value="PEN">PEN<small class="small">(PERU)</small></option>
+          <option value="PHP"
+            >PHP<small class="small">(PHILIPPINES)</small></option
+          >
+          <option value="PKR"
+            >PKR<small class="small">(PAKISTAN)</small></option
+          >
+          <option value="PLN">PLN<small class="small">(POLAND)</small></option>
+          <option value="PYG"
+            >PYG<small class="small">(PARAGUAY)</small></option
+          >
+          <option value="RON">RON<small class="small">(ROMANIA)</small></option>
+          <option value="RUB">RUB<small class="small">(RUSSIAN)</small></option>
+          <option value="SAR"
+            >SAR<small class="small">(SAUDI ARABIA)</small></option
+          >
+          <option value="SEK">SEK<small class="small">(SWEDEN)</small></option>
+          <option value="SGD">SGD<small class="small">(SUDAN)</small></option>
+          <option value="THB"
+            >THB<small class="small">(THAILAND)</small></option
+          >
+          <option value="TRY">TRY<small class="small">(TURKEY)</small></option>
+          <option value="TWD">TWD<small class="small">(TAIWAN)</small></option>
+          <option value="UAH">UAH<small class="small">(UKRAINE)</small></option>
+          <option value="USD" selected
+            >USD<small class="small"> (USA)</small></option
+          >
+          <option value="UYU">UYU<small class="small">(URUGUAY)</small></option>
+          <option value="VND"
+            >VND<small class="small">(VIET NAM)</small></option
+          >
+          <option value="ZAR"
+            >ZAR<small class="small">(S-AFRICA/Zimbabwe)</small></option
+          >
+        </select>
+        <input type="number" id="amount-one" placeholder="0" value="1" />
+      </div>
+
+      <div class="swap-rate-container">
+        <button class="btn" id="swap">
+          Swap
+        </button>
+        <div class="rate" id="rate"></div>
+      </div>
+
+      <div class="currency">
+        <select id="currency-two">
+          <option value="AED"
+            >AED
+            <p class="small">(UAE)</p></option
+          >
+          <option value="ARS"
+            >ARS
+            <p class="small">(Argentinian)</p></option
+          >
+          <option value="AUD"
+            >AUD(
+            <p class="small">Australian)</p></option
+          >
+          <option value="BGN"
+            >BGN
+            <p class="small">(Bulgarian)</p></option
+          >
+          <option value="BRL"
+            >BRL
+            <p class="small">(Brazilian)</p></option
+          >
+          <option value="BSD"
+            >BSD
+            <p class="small">(Bahamian)</p></option
+          >
+          <option value="CAD"
+            >CAD
+            <p class="small">(Canadian)</p></option
+          >
+          <option value="CHF"
+            >CHF
+            <p class="small">(Switzerland)</p></option
+          >
+          <option value="CLP"
+            >CLP
+            <p class="small">(CHILE)</p></option
+          >
+          <option value="CNY"
+            >CNY
+            <p class="small">(CHINA)</p></option
+          >
+          <option value="COP"
+            >COP
+            <p class="small">(COLOMBIA)</p></option
+          >
+          <option value="CZK"
+            >CZK
+            <p class="small">(CZECH)</p></option
+          >
+          <option value="DKK"
+            >DKK
+            <p class="small">(DENMARK)</p></option
+          >
+          <option value="DOP"
+            >DOP
+            <p class="small">(DOMINICAN)</p></option
+          >
+          <option value="EGP"
+            >EGP
+            <p class="small">(EGYPT)</p></option
+          >
+          <option value="EUR"
+            >EUR
+            <p class="small">(EUROPEAN)</p></option
+          >
+          <option value="FJD"
+            >FJD
+            <p class="small">(FIJI)</p></option
+          >
+          <option value="GBP"
+            >GBP
+            <p class="small">(GUERNSEY)</p></option
+          >
+          <option value="GTQ"
+            >GTQ
+            <p class="small">(GUATEMALA)</p></option
+          >
+          <option value="HKD"
+            >HKD
+            <p class="small">(HONG KONG)</p></option
+          >
+          <option value="HRK"
+            >HRK
+            <p class="small">(Croatian)</p></option
+          >
+          <option value="HUF"
+            >HUF
+            <p class="small">(HUNGARY)</p></option
+          >
+          <option value="IDR"
+            >IDR
+            <p class="small">(INDONESIA)</p></option
+          >
+          <option value="ILS"
+            >ILS
+            <p class="small">(ISRAEL)</p></option
+          >
+          <option value="INR"
+            >INR
+            <p class="small">(INDIA)</p></option
+          >
+          <option value="ISK"
+            >ISK
+            <p class="small">(ICELAND)</p></option
+          >
+          <option value="JPY"
+            >JPY
+            <p class="small">(JAPAN)</p></option
+          >
+          <option value="KRW"
+            >KRW
+            <p class="small">(KOREA)</p></option
+          >
+          <option value="KZT"
+            >KZT
+            <p class="small">(KAZAKHSTAN)</p></option
+          >
+          <option value="MXN"
+            >MXN
+            <p class="small">(MEXICO)</p></option
+          >
+          <option value="MYR"
+            >MYR
+            <p class="small">(MALAYSIA)</p></option
+          >
+          <option value="NOK"
+            >NOK
+            <p class="small">(NORWAY)</p></option
+          >
+          <option value="NZD"
+            >NZD
+            <p class="small">(NIUE)</p></option
+          >
+          <option value="PAB"
+            >PAB
+            <p class="small">(PANAMA)</p></option
+          >
+          <option value="PEN"
+            >PEN
+            <p class="small">(PERU)</p></option
+          >
+          <option value="PHP"
+            >PHP
+            <p class="small">(PHILIPPINES)</p></option
+          >
+          <option value="PKR"
+            >PKR
+            <p class="small">(PAKISTAN)</p></option
+          >
+          <option value="PLN"
+            >PLN
+            <p class="small">(POLAND)</p></option
+          >
+          <option value="PYG"
+            >PYG
+            <p class="small">(PARAGUAY)</p></option
+          >
+          <option value="RON"
+            >RON
+            <p class="small">(ROMANIA)</p></option
+          >
+          <option value="RUB"
+            >RUB
+            <p class="small">(RUSSIAN)</p></option
+          >
+          <option value="SAR"
+            >SAR
+            <p class="small">(SAUDI ARABIA)</p></option
+          >
+          <option value="SEK"
+            >SEK
+            <p class="small">(SWEDEN)</p></option
+          >
+          <option value="SGD"
+            >SGD
+            <p class="small">(SUDAN)</p></option
+          >
+          <option value="THB"
+            >THB
+            <p class="small">(THAILAND)</p></option
+          >
+          <option value="TRY"
+            >TRY
+            <p class="small">(TURKEY)</p></option
+          >
+          <option value="TWD"
+            >TWD
+            <p class="small">(TAIWAN)</p></option
+          >
+          <option value="UAH"
+            >UAH
+            <p class="small">(UKRAINE)</p></option
+          >
+          <option value="USD"
+            >USD
+            <p class="small">(USA)</p></option
+          >
+          <option value="UYU"
+            >UYU
+            <p class="small">(URUGUAY)</p></option
+          >
+          <option value="VND"
+            >VND
+            <p class="small">(VIET NAM)</p></option
+          >
+          <option value="ZAR"
+            >ZAR
+            <p class="small">(S-AFRICA/Zimbabwe)</p></option
+          >
+        </select>
+        <input type="number" id="amount-two" placeholder="0" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
